@@ -2,6 +2,9 @@ version: "3.8"
 
 services:
   note-book:
-    image: vhtec/jupyter-docker:latest
+    build:
+      context: ${web_ROOT:-.}
     ports:
       - 8888:8888
+    volumes:
+      - ${web_ROOT:-.}:/usr/notebook/
